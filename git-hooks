@@ -101,7 +101,9 @@ function install_hooks_into
     cd "${DIR}"
 
     set -e
-    mv hooks hooks.old
+    if [ -d hooks ] ; then
+        mv hooks hooks.old
+    fi
     set +e
     mkdir hooks
     cd hooks
